@@ -2,7 +2,9 @@ import React from 'react'
 
 const App = () => {
     return (
-        <div className='bg-red-500'>App</div>
+        <div>
+            <h1 className='text-3xl'>WELLO</h1>
+        </div>
     )
 }
 export default App
