@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { Element } from 'react-scroll'
+import { plans } from '../constants'
 
 const Pricing = () => {
 
@@ -22,10 +23,39 @@ const Pricing = () => {
                   <button className={clsx('pricing-head_btn', !monthly && 'text-p4')}  onClick={() => setMonthly(false)}>
                      Annual
                   </button>
+
+                  <div className={clsx('g4 rounded-14 before:h-100 pricing-head_btn_before absolute left-2 top-2 h-[calc(100%-16px)] w-[calc(50%-8px)] overflow-hidden shadow-400 transition-transform duration-500', !monthly && 'translate-x-full' )} />
                </div>
 
+               <div className='pricing-bg'>
+                  <img 
+                     src={"/images/bg-outlines.svg"} 
+                     alt="outline" 
+                     width={960} 
+                     height={380} 
+                     className='relative z-2'
+                  />
+
+                  <img 
+                     src={"/images/bg-outlines-fill.png"} 
+                     alt="outline" 
+                     width={960} 
+                     height={380} 
+                     className='absolute inset-0 opacity-5 mix-blend-soft-light'
+                  />
+               </div>
             </div>
 
+
+            {/* PRICING SECTION*/}
+            <div>
+               {plans.map((plan,index) => (
+                  <div key={plan.id} className=''>
+                     {plan.title}
+                  </div>
+
+               ))}
+            </div>
          </div>
 
       </Element>
